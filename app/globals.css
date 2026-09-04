@@ -1,0 +1,74 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-be-vietnam);
+  --font-heading: var(--font-be-vietnam);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-lg: var(--radius);
+}
+
+body {
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --background: #f3f7fb;
+  --foreground: #162238;
+  --card: #ffffff;
+  --primary: #10213d;
+  --primary-foreground: #ffffff;
+  --secondary: #e8eff7;
+  --secondary-foreground: #1d3859;
+  --muted: #eef3f8;
+  --muted-foreground: #66738a;
+  --border: #d8e2ee;
+  --input: #d8e2ee;
+  --ring: #7aa6d6;
+  --radius: 0.9rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+body { @apply bg-background text-foreground; font-family: var(--font-be-vietnam), Arial, sans-serif; }
+button, input, textarea { font: inherit; }
+.surface-card { @apply rounded-2xl border border-[#d8e2ee] bg-white shadow-[0_12px_30px_rgba(20,45,80,0.055)]; }
+.eyebrow { @apply text-[0.7rem] font-extrabold tracking-[0.12em] text-[#66809e]; }
+.status-pill { @apply inline-flex items-center gap-1.5 rounded-full border border-[#c8ddf2] bg-[#f2f8ff] px-3 py-1.5 text-sm font-semibold text-[#356da9]; }
+.nav-item { @apply inline-flex shrink-0 items-center gap-3 rounded-xl px-3 py-2.5 text-left text-sm font-semibold text-blue-100 transition hover:bg-white/10 hover:text-white; }
+.nav-item svg { @apply size-4; }
+.nav-item-active { @apply bg-white/12 text-white; }
+.meal-card { @apply flex min-h-32 items-center gap-3 rounded-2xl border border-[#d8e2ee] bg-white p-4 transition hover:border-[#abc8e6] hover:bg-[#fbfdff]; }
+.meal-card-selected { @apply border-[#77a8da] bg-[#f5faff] ring-1 ring-[#77a8da]; }
+.quantity-button { @apply grid size-6 place-items-center rounded-md text-sm font-bold text-[#36506f] transition hover:bg-white; }
+.field-label { @apply grid gap-2 text-sm font-semibold text-[#40536d]; }
+.field-label input, .field-label textarea { @apply h-10 rounded-xl border-[#cedae8] bg-white text-[#162238] shadow-none placeholder:text-[#9aa9b9] focus-visible:border-[#5387bd] focus-visible:ring-3 focus-visible:ring-[#b7d2ec]/40; }
+.field-label textarea { @apply h-auto min-h-24 py-2.5; }
+.method-card { @apply grid grid-cols-[auto_1fr_auto] items-center gap-3 rounded-2xl border border-[#d8e2ee] p-4 text-left transition hover:border-[#9fc0e7]; }
+.method-card strong { @apply block text-sm text-[#1f334e]; }
+.method-card small { @apply mt-1 block text-xs leading-5 text-[#718096]; }
+.method-card-active { @apply border-[#638fbd] bg-[#f5faff] ring-1 ring-[#638fbd]; }
+.method-radio { @apply size-4 rounded-full border-4 border-white bg-[#c2cfdd] ring-1 ring-[#b5c4d4]; }
+.method-card-active .method-radio { @apply bg-[#356da9] ring-[#356da9]; }
